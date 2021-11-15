@@ -30,7 +30,7 @@ alias gplo="git pull origin $1 --rebase"
 alias gplu="git pull upstream $1 --rebase"
 
 # commit
-alias gcs="git commit -S"
+alias gcs="git commit"
 
 # custom
 gstart() 
@@ -94,22 +94,14 @@ alias sp="cd ~/Projects/self_projects/"
 alias clp="cd ~/Projects/client_projects/"
 
 # create a symlink of current folder to DATA
-#make_sym() {
-#    path_arr=($(echo $PWD | tr '/' "\n"))
-#    _temp_path=${path_arr[@]:2}
-#    home_path=${_temp_path// /\/}
-#    _path=~/DATA/$home_path
-#    mkdir -p $_path
-#    ln -s $_path archive
-#}
+make_sym() {
+    path_arr=($(echo $PWD | tr '/' "\n"))
+    _temp_path=${path_arr[@]:2}
+    home_path=${_temp_path// /\/}
+    _path=~/DATA/$home_path
+    mkdir -p $_path
+    ln -s $_path archive
+}
 
-# kitty stuff
-# alias icat="kitty +kitten icat"
-
-
-# export a .env 
-alias export_env="export \$(grep -v '^#' .env | xargs)"
-
-
-
-
+alias vpn_connect="openvpn3 session-start --config ~/college.ovpn"
+alias vpn_disconnect="openvpn3 session-manage --config ~/college.ovpn --disconnect"
