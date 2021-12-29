@@ -9,4 +9,4 @@ docker run -td \
     --name=rpvio \
     --cap-add sys_ptrace \
     -p127.0.0.1:2222:22 \
-    ros:nvidia
+    ros:melodic-nvidia
