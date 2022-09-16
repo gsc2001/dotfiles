@@ -105,3 +105,5 @@ make_sym() {
 
 alias vpn_connect="openvpn3 session-start --config ~/college.ovpn"
 alias vpn_disconnect="openvpn3 session-manage --config ~/college.ovpn --disconnect"
+alias tmux="tmux -u"
+
