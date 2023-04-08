@@ -1,0 +1,36 @@
+# global settings
+yabai -m config \
+	mouse_follows_focus off \
+	focus_follows_mouse off \
+	window_origin_display default \
+	window_placement second_child \
+	window_topmost off \
+	window_shadow off \
+	window_border_radius 12 \
+	split_ratio 0.50 \
+	split_type auto \
+	auto_balance off \
+	window_gap 10 \
+	top_padding 10 \
+	bottom_padding 10 \
+	left_padding 10 \
+	right_padding 10 \
+	window_opacity on \
+	layout bsp \
+	mouse_modifier fn \
+	mouse_action1 move \
+	mouse_action2 resize \
+	mouse_drop_action swap \
+
+yabai -m rule --add app="^System Settings$" sticky=on manage=off
+yabai -m rule --add app="Stats" sticky=on manage=off
+yabai -m rule --add app="Calculator" sticky=on manage=off
+yabai -m rule --add app="^Finder$" sticky=on manage=off
+yabai -m rule --add app="^Disk Utility$" sticky=on manage=off
+yabai -m rule --add app="^System Information$" sticky=on manage=off
+yabai -m rule --add app="^Activity Monitor$" sticky=on manage=off
+yabai -m rule --add app="^console$" manage=off
+yabai -m rule --add app="^Digital Colou?r Meter$" sticky=on manage=off
+yabai -m rule --add app="Pomotroid" manage=off
+
+echo "yabai configuration loaded.."
