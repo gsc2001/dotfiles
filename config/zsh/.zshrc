@@ -25,17 +25,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 #ZSH_THEME="agnoster"
 
 
-# virtualenv wrapper init
-# export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-# export WORKON_HOME=$HOME/.virtualenvs
-# export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-# source /usr/local/bin/virtualenvwrapper.sh
-
 # Default editor
 export EDITOR=vim
-
-# direnv
-
 
 
 # Set list of themes to pick from when loading at random
@@ -102,10 +93,13 @@ plugins=(
         docker
         docker-compose
         zsh-syntax-highlighting
-        zsh-autosuggestions
+	zsh-autosuggestions
+	conda-zsh-completion
         )
 
+
 source $ZSH/oh-my-zsh.sh
+autoload -U compinit && compinit
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -134,11 +128,11 @@ source $ZSH/oh-my-zsh.sh
 source ~/.aliases
 
 # Virtual env wrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-source /usr/local/bin/virtualenvwrapper_lazy.sh
+# export WORKON_HOME=$HOME/.virtualenvs
+#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+#export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+#export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+#source /usr/local/bin/virtualenvwrapper_lazy.sh
 
 # :source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -153,7 +147,6 @@ source /usr/local/bin/virtualenvwrapper_lazy.sh
 #    "ZSH_INIT_COMMAND": "source dev-environment-setup.sh"
 #}
 
-export PATH=$PATH:~/installations/g2o/g2o/bin/
 
 if [[ -n $ZSH_INIT_COMMAND ]]; then
     eval "$ZSH_INIT_COMMAND"
@@ -162,9 +155,6 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
-fi
 
 nvm_start() {
 	export NVM_DIR="$HOME/.nvm"
@@ -173,17 +163,25 @@ nvm_start() {
 }
 alias tmux="tmux -u"
 
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+eval "$(zoxide init zsh)"
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/gsc2001/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/gsc2001/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/gsc2001/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/gsc2001/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/gsc2001/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/gsc2001/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/gsc2001/miniconda3/bin:$PATH"
+        export PATH="/Users/gsc2001/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+eval "$(zoxide init zsh)"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

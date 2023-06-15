@@ -50,11 +50,6 @@ gstart()
 # docker
 alias dc="docker-compose"
 
-open()
-{
-    xdg-open $1 &> /dev/null &
-}
-
 
 # Function to run c++ codes
 run()
