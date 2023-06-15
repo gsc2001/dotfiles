@@ -23,6 +23,7 @@ yabai -m config \
 	mouse_drop_action swap \
 
 yabai -m rule --add app="^System Settings$" sticky=on manage=off
+yabai -m rule --add app="^OpenVPN Connect$" sticky=on manage=off
 yabai -m rule --add app="Stats" sticky=on manage=off
 yabai -m rule --add app="Calculator" sticky=on manage=off
 yabai -m rule --add app="^Finder$" sticky=on manage=off
