@@ -101,4 +101,7 @@ make_sym() {
 alias vpn_connect="openvpn3 session-start --config ~/college.ovpn"
 alias vpn_disconnect="openvpn3 session-manage --config ~/college.ovpn --disconnect"
 alias tmux="tmux -u"
-
+alias ibrew="/usr/local/bin/brew"
+alias bazel="/usr/local/bin/bazel"
+alias kubeconfig_icc_sandbox="aws eks update-kubeconfig --name sandbox-cloud-console-eks-cluster --region us-east-2 --role arn:aws:iam::591759939757:role/sandbox-cloud-console-admin-role --alias cc-sandbox --profile instabase-sandbox"
+alias kubeconfig_icc_saas="aws eks update-kubeconfig --name saas-cloud-console-eks-cluster --region us-east-2 --alias cc-saas --role arn:aws:iam::854390990964:role/saas-cloud-console-admin-role"

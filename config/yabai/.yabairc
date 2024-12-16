@@ -23,6 +23,7 @@ yabai -m config \
 	mouse_drop_action swap \
 
 yabai -m rule --add app="^System Settings$" sticky=on manage=off
+yabai -m rule --add app="^System Preferences$" sticky=on manage=off
 yabai -m rule --add app="^OpenVPN Connect$" sticky=on manage=off
 yabai -m rule --add app="Stats" sticky=on manage=off
 yabai -m rule --add app="Calculator" sticky=on manage=off
@@ -33,5 +34,6 @@ yabai -m rule --add app="^Activity Monitor$" sticky=on manage=off
 yabai -m rule --add app="^console$" manage=off
 yabai -m rule --add app="^Digital Colou?r Meter$" sticky=on manage=off
 yabai -m rule --add app="Pomotroid" manage=off
+yabai -m rule --add app="Rize" manage=off
 
 echo "yabai configuration loaded.."
